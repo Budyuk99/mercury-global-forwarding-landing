@@ -274,6 +274,10 @@ nav a {
     text-align: left;
 }
 
+.h2_basic-slider {
+    margin: 120px 60px;
+}
+
 /* Адаптивность */
 @media (max-width: 768px) {
     header {
