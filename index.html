@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Липкая шапка и баннер</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="/assets/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  <header>
-    <div class="logo"><img src="/assets/images/logo.svg" alt="logo"></div>
-    <nav>
-        <a href="#">Услуги</a>
-        <a href="#">Контакты</a>
+    <header>
+        <div class="logo"><img src="/assets/images/logo.svg" alt="logo"></div>
+        <nav>
+            <a href="#">Услуги</a>
+            <a href="#">Контакты</a>
 
-        <div class="divider"></div>
+            <div class="divider"></div>
 
-        <!-- Выпадающий список языков -->
-        <div class="lang-dropdown">
-            <div><img src="/assets/images/Vector.svg" alt="vector"></div>
-            <div class="lang-btn">RU</div>
-            <div class="lang-menu">
-                <a href="#" data-lang="ru">RU — Русский</a>
-                <a href="#" data-lang="en">EN — English</a>
-                <a href="#" data-lang="de">DE — Deutsch</a>
+            <!-- Выпадающий список языков -->
+            <div class="lang-dropdown">
+                <div><img src="/assets/images/Vector.svg" alt="vector"></div>
+                <div class="lang-btn">RU</div>
+                <div class="lang-menu">
+                    <a href="#" data-lang="ru">RU — Русский</a>
+                    <a href="#" data-lang="en">EN — English</a>
+                    <a href="#" data-lang="de">DE — Deutsch</a>
+                </div>
             </div>
-        </div>
-    </nav>
-  </header>
+        </nav>
+    </header>
 
     <section class="banner">
         <video class="banner-video" autoplay muted loop playsinline>
@@ -48,31 +53,32 @@
                 <div class="content-block_item-img"><img src="/assets/images/earth.svg" alt="Vehicle_Truck_Cube"></div>
                 <div class="content-block_item-text">
                     <div class="content-block_item-first">Международные перевозки</div>
-                    <div  class="content-block_item-second">
+                    <div class="content-block_item-second">
                         Мы обеспечиваем быструю и безопасную логистику
-                        на ключевых мировых направлениях. Наша задача — 
-                        предложить оптимальное решение и взять на себя 
-                        все сложности перевозки. Доверьте нам доставку 
-                        вашего груза — мы выполним её в срок и в строгом 
+                        на ключевых мировых направлениях. Наша задача —
+                        предложить оптимальное решение и взять на себя
+                        все сложности перевозки. Доверьте нам доставку
+                        вашего груза — мы выполним её в срок и в строгом
                         соответствии с вашими требованиями.
                     </div>
-                    <div  class="content-block_item-third"><a href="#">Узнать больше</a></div>
+                    <div class="content-block_item-third"><a href="#">Узнать больше</a></div>
                 </div>
             </div>
 
             <div class="content-block_item">
-                <div class="content-block_item-img"><img src="/assets/images/clipboard.svg" alt="Vehicle_Truck_Cube"></div>
+                <div class="content-block_item-img"><img src="/assets/images/clipboard.svg" alt="Vehicle_Truck_Cube">
+                </div>
                 <div class="content-block_item-text">
                     <div class="content-block_item-first">Таможенное оформление</div>
-                    <div  class="content-block_item-second">
+                    <div class="content-block_item-second">
                         Правила становятся проще, но изменения в таможенном 
-                        тарифе и процедурах происходят регулярно. Доверьте 
-                        процесс таможенного оформления нам — мы сэкономим 
-                        ваше время и ресурсы, взяв на себя все формальности: 
-                        от консультаций до полного сопровождения любой 
+                        тарифе и процедурах происходят регулярно. Доверьте
+                        процесс таможенного оформления нам — мы сэкономим
+                        ваше время и ресурсы, взяв на себя все формальности:
+                        от консультаций до полного сопровождения любой
                         таможенной процедуры.
                     </div>
-                    <div  class="content-block_item-third"><a href="#">Узнать больше</a></div>
+                    <div class="content-block_item-third"><a href="#">Узнать больше</a></div>
                 </div>
             </div>
 
@@ -80,29 +86,30 @@
                 <div class="content-block_item-img"><img src="/assets/images/box.svg" alt="Vehicle_Truck_Cube"></div>
                 <div class="content-block_item-text">
                     <div class="content-block_item-first">Проектные перевозки</div>
-                    <div  class="content-block_item-second">
-                        Берёмся за самые сложные задачи: перевозку 
+                    <div class="content-block_item-second">
+                        Берёмся за самые сложные задачи: перевозку
                         негабаритных, тяжеловесных и нестандартных грузов.
                         Наш опыт и экспертиза гарантируют, что ваш 
                         уникальный проект будет выполнен безопасно и в срок.
                     </div>
-                    <div  class="content-block_item-third"><a href="#">Узнать больше</a></div>
+                    <div class="content-block_item-third"><a href="#">Узнать больше</a></div>
                 </div>
             </div>
 
             <div class="content-block_item">
-                <div class="content-block_item-img"><img src="/assets/images/building.svg" alt="Vehicle_Truck_Cube"></div>
+                <div class="content-block_item-img"><img src="/assets/images/building.svg" alt="Vehicle_Truck_Cube">
+                </div>
                 <div class="content-block_item-text">
                     <div class="content-block_item-first">Ответственное хранение</div>
-                    <div  class="content-block_item-second">
-                        Ваш товар в надёжных руках. Обеспечим полную 
+                    <div class="content-block_item-second">
+                        Ваш товар в надёжных руках. Обеспечим полную
                         сохранность, оптимальные складские условия и 
                         круглосуточный контроль.
                         Гибкие условия хранения, оперативная отгрузка и 
                         детальная отчётность — чтобы вы экономили на 
                         хранении и легко управлять товаром на складе.
                     </div>
-                    <div  class="content-block_item-third"><a href="#">Узнать больше</a></div>
+                    <div class="content-block_item-third"><a href="#">Узнать больше</a></div>
                 </div>
             </div>
 
@@ -110,38 +117,43 @@
                 <div class="content-block_item-img"><img src="/assets/images/money.svg" alt="Vehicle_Truck_Cube"></div>
                 <div class="content-block_item-text">
                     <div class="content-block_item-first">Закупка товара</div>
-                    <div  class="content-block_item-second">
-                        Найдем поставщиков по всему миру, организуем 
-                        закупку товаров, проведем платежи, получим 
+                    <div class="content-block_item-second">
+                        Найдем поставщиков по всему миру, организуем
+                        закупку товаров, проведем платежи, получим
                         необходимые разрешительные документы.
                     </div>
-                    <div  class="content-block_item-third"><a href="#">Узнать больше</a></div>
+                    <div class="content-block_item-third"><a href="#">Узнать больше</a></div>
                 </div>
             </div>
 
             <div class="content-block_item">
-                <div class="content-block_item-img"><img src="/assets/images/receipt.svg" alt="Vehicle_Truck_Cube"></div>
+                <div class="content-block_item-img"><img src="/assets/images/receipt.svg" alt="Vehicle_Truck_Cube">
+                </div>
                 <div class="content-block_item-text">
                     <div class="content-block_item-first">Страхование грузов</div>
-                    <div  class="content-block_item-second">
-                        Заботимся о Вашем спокойствии и уверенности, 
-                        оформим страхование груза в ведущих страховых 
+                    <div class="content-block_item-second">
+                        Заботимся о Вашем спокойствии и уверенности,
+                        оформим страхование груза в ведущих страховых
                         компаниях мира на лучших условиях.
                     </div>
-                    <div  class="content-block_item-third"><a href="#">Узнать больше</a></div>
+                    <div class="content-block_item-third"><a href="#">Узнать больше</a></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="content">
+    <section class="slider">
         <h2 class="h2_basic h2_basic-slider">Галерея</h2>
-          <div class="owl-carousel gallery-slider owl-theme">
-    <div class="slide"><img src="/assets/images/slide_1.png" alt="Слайд 1"></div>
-    <div class="slide"><img src="/assets/images/slide_1.png" alt="Слайд 2"></div>
-  </div>
+        <div class="owl-carousel gallery-slider owl-theme">
+            <div class="slide"><img src="/assets/images/slide_1.png" alt="Слайд 1"></div>
+            <div class="slide"><img src="/assets/images/slide_1.png" alt="Слайд 2"></div>
+        </div>
     </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
     <script src="/assets/script.js"></script>
 </body>
+
 </html>
