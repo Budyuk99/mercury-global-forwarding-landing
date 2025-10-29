@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+}
+
+/* Шапка */
+header {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    color: #fff;
+    padding: 21px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    height: 80px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header nav a {
+    text-decoration: none;
+    transition: color 0.3s;
+    color: #212121;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+header nav a:hover {
+    color: #00bcd4;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 769px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+}
+
+.banner-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* чтобы видео покрывало весь блок */
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.banner-content {
+    position: absolute;      /* абсолютное позиционирование внутри .banner */
+    top: 420px;              /* отступ сверху */
+    left: 245px;             /* отступ слева */
+    right: 245px;            /* отступ справа */
+    z-index: 1;              /* поверх видео */
+    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    color: #FFF;
+    text-align: center;
+    font-family: Manrope;
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.banner-content_second {
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+/* Контент ниже */
+.content {
+    padding: 60px 40px;
+    line-height: 1.6;
+    font-size: 1.2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    height: 100%;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-family: 'Manrope', sans-serif;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* Стили для выпадающего списка языков */
+.lang-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #0069B4;
+    border-radius: 8px;
+    cursor: pointer;
+    gap: 6px;
+    padding: 10px 15px;
+}
+
+.lang-dropdown {}
+
+.lang-btn {
+    cursor: pointer;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    font-family: 'Manrope', sans-serif;
+    border: none;
+    color: #212121;
+    background: none;
+}
+
+.lang-menu {
+    position: absolute;
+    top: 100%;
+    left: -90px;
+    background: white;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    min-width: 180px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1001;
+    margin-top: 5px;
+}
+
+.lang-menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #f8f9fa;
+    transition: all 0.2s ease;
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.lang-menu a:last-child {
+    border-bottom: none;
+}
+
+.lang-menu a:hover {
+    background-color: #0069B4;
+    color: white;
+}
+
+/* Показываем меню при активном состоянии */
+.lang-dropdown.active .lang-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-dropdown.active .lang-btn {
+    background-color: #0069B4;
+    color: white;
+    border-color: #0069B4;
+}
+
+/* Класс для открытия меню справа */
+.lang-menu.right {
+    left: auto;
+    right: 0;
+}
+
+.divider {
+    width: 1px;
+    height: 100%; /* высота линии */
+    background-color: rgba(33, 33, 33, 0.12); /* серый цвет */
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+        height: 70px;
+    }
+    
+    nav {
+        gap: 1rem;
+    }
+    
+    header nav a {
+        font-size: 16px;
+    }
+    
+    .lang-btn {
+        font-size: 16px;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .banner {
+        font-size: 2rem;
+    }
+    
+    .content {
+        padding: 40px 20px;
+    }
+}

@@ -1,11 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Липкая шапка и баннер</title>
+    <link rel="stylesheet" href="/assets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    123
+
+  <header>
+    <div class="logo"><img src="/assets/images/logo.svg" alt="logo"></div>
+    <nav>
+        <a href="#">Услуги</a>
+        <a href="#">Контакты</a>
+
+        <div class="divider"></div>
+
+        <!-- Выпадающий список языков -->
+        <div class="lang-dropdown">
+            <div><img src="/assets/images/Vector.svg" alt="vector"></div>
+            <div class="lang-btn">RU</div>
+            <div class="lang-menu">
+                <a href="#" data-lang="ru">RU — Русский</a>
+                <a href="#" data-lang="en">EN — English</a>
+                <a href="#" data-lang="de">DE — Deutsch</a>
+            </div>
+        </div>
+    </nav>
+  </header>
+
+    <section class="banner">
+        <video class="banner-video" autoplay muted loop playsinline>
+            <source src="/assets/video/main-banner-video.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+        <div class="banner-content">
+            <div class="banner-content_first">MERCURY GLOBAL FORWARDING</div>
+            <div class="banner-content_second">FULL RANGE OF FREIGHT FORWARDING SERVICES</div>
+        </div>
+    </section>
+
+  <section class="content">
+    <h2>О компании</h2>
+    <p>
+      Здесь можно разместить информацию о вашей компании, товарах и услугах. 
+      Прокрути страницу — шапка остаётся на месте, а баннер занимает весь экран.
+    </p>
+  </section>
+
+  <script src="/assets/script.js"></script>
 </body>
 </html>
