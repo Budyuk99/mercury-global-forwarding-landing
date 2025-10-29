@@ -270,6 +270,10 @@ nav a {
     background-position: center;
 }
 
+.h2_basic-slider {
+    text-align: left;
+}
+
 /* Адаптивность */
 @media (max-width: 768px) {
     header {
