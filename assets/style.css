@@ -265,7 +265,9 @@ nav a {
 
 .content-services {
     background-image: url(/assets/images/background-image.svg);
-    background: no-repeat;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 
 /* Адаптивность */
