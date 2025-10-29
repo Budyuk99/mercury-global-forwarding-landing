@@ -284,11 +284,7 @@ nav a {
 }
 
 .h2_basic-slider {
-    margin: 120px 60px;
-}
-
-.gallery-slider {
-    padding: 40px 0;
+    margin: 120px 60px 44px 60px;
 }
 
 .gallery-slider .slide {
@@ -305,9 +301,38 @@ nav a {
     border-radius: 16px;
 }
 
-.gallery-slider .slide:hover {
-    transform: scale(1.03);
+.owl-nav button.owl-prev,
+.owl-nav button.owl-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.6) !important;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 2rem !important;
+  color: #333 !important;
+  border: none;
+  outline: none;
 }
+
+.owl-nav button.owl-prev,
+.owl-nav button.owl-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.6) !important;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 2rem !important;
+  color: #333 !important;
+  border: none;
+  outline: none;
+}
+
+.owl-nav button.owl-prev { left: 15px; }
+.owl-nav button.owl-next { right: 15px; }
 
 /* Адаптивность */
 @media (max-width: 1200px) {
