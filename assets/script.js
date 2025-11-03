@@ -101,3 +101,18 @@ $(".gallery-slider").owlCarousel({
     },
   },
 });
+
+document.querySelectorAll('.toggle-text-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault(); // чтобы ссылка не переходила по #
+        const textContainer = link.closest('.content-block_item-text');
+        textContainer.classList.toggle('expanded');
+
+        // Меняем текст ссылки
+        if (textContainer.classList.contains('expanded')) {
+            link.textContent = "Свернуть";
+        } else {
+            link.textContent = "Узнать больше";
+        }
+    });
+});

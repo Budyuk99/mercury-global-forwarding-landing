@@ -262,6 +262,7 @@ nav a {
     border: 1.5px solid #0069B4;
     flex-basis: calc(50% - 6px);
     justify-content: space-between;
+    width: 100%;
 }
 
 .content-block_item-first {
@@ -482,6 +483,28 @@ nav a {
     background: #0069B4 !important;
 }
 
+.full-text {
+    display: none;
+    margin-top: 10px;
+    color: #212121;
+    line-height: 1.5;
+    transition: max-height 0.3s ease;
+}
+
+.content-block_item-text.expanded .full-text {
+    display: block;
+}
+
+.full-text_img {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.full-text_img img {
+    width: 100%;
+}
 
 /* Мобильная версия навигации */
 @media (max-width: 768px) {
