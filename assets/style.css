@@ -309,38 +309,6 @@ nav a {
     margin: 120px 60px 44px 60px;
 }
 
-.gallery-slider .slide {
-    position: relative;
-    overflow: hidden;
-    border-radius: 16px;
-    transition: transform 0.3s ease;
-}
-
-.gallery-slider .slide img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 16px;
-}
-
-.owl-nav button.owl-prev,
-.owl-nav button.owl-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.6) !important;
-    border-radius: 50%;
-    width: 45px;
-    height: 45px;
-    font-size: 2rem !important;
-    color: #333 !important;
-    border: none;
-    outline: none;
-}
-
-.owl-nav button.owl-prev { left: 15px; }
-.owl-nav button.owl-next { right: 15px; }
-
 .footer {
     background: #0069B4;
     color: #f1f5f9;
@@ -383,6 +351,61 @@ nav a {
     margin-bottom: 12px;
 }
 
+.slider {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+
+.gallery-slider {
+  margin: 0 auto;
+}
+
+.gallery-slider .slide {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-slider .slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+/* Навигация */
+.owl-nav button.owl-prev,
+.owl-nav button.owl-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 24px !important;
+  color: #333 !important;
+  border: none;
+  outline: none;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.owl-nav button.owl-prev:hover,
+.owl-nav button.owl-next:hover {
+  background: #fff !important;
+}
+
+.owl-nav button.owl-prev { left: 15px; }
+.owl-nav button.owl-next { right: 15px; }
+
+
 /* Адаптивность */
 @media (max-width: 1200px) {
     .banner-content {
@@ -395,14 +418,6 @@ nav a {
     
     .content-block_item {
         flex-basis: 100%;
-    }
-    
-    .owl-stage {
-        padding-left: 40px !important;
-    }
-
-    .owl-item {
-        margin-right: -60px;
     }
 }
 
