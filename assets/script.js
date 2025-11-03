@@ -116,3 +116,30 @@ document.querySelectorAll('.toggle-text-link').forEach(link => {
         }
     });
 });
+
+// Мессенджер кнопка
+const messengerBtn = document.querySelector('.messenger-btn');
+const messengerWrapper = document.querySelector('.messenger-wrapper');
+
+if (messengerBtn && messengerWrapper) {
+    messengerBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        messengerWrapper.classList.toggle('active');
+    });
+
+    // Закрытие при клике вне области
+    document.addEventListener('click', (e) => {
+        if (!messengerWrapper.contains(e.target)) {
+            messengerWrapper.classList.remove('active');
+        }
+    });
+
+    // Закрытие при клике на иконку мессенджера (опционально)
+    document.querySelectorAll('.messenger-option').forEach(option => {
+        option.addEventListener('click', () => {
+            setTimeout(() => {
+                messengerWrapper.classList.remove('active');
+            }, 300);
+        });
+    });
+}

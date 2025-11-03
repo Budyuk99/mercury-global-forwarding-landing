@@ -506,6 +506,242 @@ nav a {
     width: 100%;
 }
 
+/* Кнопка мессенджера */
+.messenger-wrapper {
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+    z-index: 10000;
+}
+
+.messenger-btn {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #0069B4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 12px black;
+}
+
+.messenger-btn img {
+    width: 32px;
+    height: 32px;
+    transition: all 0.3s ease;
+}
+
+.messenger-options {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 70px;
+    height: 70px;
+}
+
+.messenger-option {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    bottom: 7.5px;
+    right: 7.5px;
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    text-decoration: none;
+    z-index: 1;
+}
+
+.messenger-option img {
+    width: 26px;
+    height: 26px;
+}
+
+/* Цвета для разных мессенджеров */
+.messenger-option.whatsapp { background-color: #25D366; }
+.messenger-option.telegram { background-color: #0088cc; }
+.messenger-option.viber { background-color: #7360F2; }
+.messenger-option.messenger { background-color: #006AFF; }
+.messenger-option.skype { background-color: #00AFF0; }
+.messenger-option.signal { background-color: #3A76F0; }
+
+/* Позиционирование иконок по кругу */
+.messenger-wrapper.active .messenger-option:nth-child(1) {
+    transform: translate(-120px, 0) scale(1);
+    opacity: 1;
+    transition-delay: 0.1s;
+}
+
+.messenger-wrapper.active .messenger-option:nth-child(2) {
+    transform: translate(-100px, -70px) scale(1);
+    opacity: 1;
+    transition-delay: 0.15s;
+}
+
+.messenger-wrapper.active .messenger-option:nth-child(3) {
+    transform: translate(-50px, -120px) scale(1);
+    opacity: 1;
+    transition-delay: 0.2s;
+}
+
+.messenger-wrapper.active .messenger-option:nth-child(4) {
+    transform: translate(20px, -120px) scale(1);
+    opacity: 1;
+    transition-delay: 0.25s;
+}
+
+.messenger-wrapper.active .messenger-option:nth-child(5) {
+    transform: translate(80px, -70px) scale(1);
+    opacity: 1;
+    transition-delay: 0.3s;
+}
+
+.messenger-wrapper.active .messenger-option:nth-child(6) {
+    transform: translate(100px, 0) scale(1);
+    opacity: 1;
+    transition-delay: 0.35s;
+}
+
+.messages {
+    background: #45B035;
+}
+
+.mail {
+    background: #0069B4;
+}
+
+.messenger-wrapper.active .messenger-btn {
+    border: 4px solid #fff;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .messenger-wrapper {
+        bottom: 90px;
+        right: 90px;
+    }
+    
+    .messenger-btn {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .messenger-btn img {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .messenger-option {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .messenger-option img {
+        width: 24px;
+        height: 24px;
+    }
+    
+    /* Уменьшаем радиус круга на мобильных */
+    .messenger-wrapper.active .messenger-option:nth-child(1) {
+        transform: translate(-100px, 0) scale(1);
+    }
+    
+    .messenger-wrapper.active .messenger-option:nth-child(2) {
+        transform: translate(-80px, -60px) scale(1);
+    }
+    
+    .messenger-wrapper.active .messenger-option:nth-child(3) {
+        transform: translate(-40px, -100px) scale(1);
+    }
+    
+    .messenger-wrapper.active .messenger-option:nth-child(4) {
+        transform: translate(10px, -100px) scale(1);
+    }
+    
+    .messenger-wrapper.active .messenger-option:nth-child(5) {
+        transform: translate(60px, -60px) scale(1);
+    }
+    
+    .messenger-wrapper.active .messenger-option:nth-child(6) {
+        transform: translate(80px, 0) scale(1);
+    }
+}
+
+@media (max-width: 480px) {
+    .messenger-wrapper {
+        bottom: 70px;
+        right: 70px;
+    }
+    
+    .messenger-btn {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .messenger-btn img {
+        width: 26px;
+        height: 26px;
+    }
+    
+    .messenger-option {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .messenger-option img {
+        width: 22px;
+        height: 22px;
+    }
+    
+    /* Еще меньше радиус для очень маленьких экранов */
+    .messenger-wrapper.active .messenger-option:nth-child(1) {
+        transform: translate(-80px, 0) scale(1);
+    }
+    
+    .messenger-wrapper.active .messenger-option:nth-child(2) {
+        transform: translate(-65px, -50px) scale(1);
+    }
+    
+    .messenger-wrapper.active .messenger-option:nth-child(3) {
+        transform: translate(-35px, -80px) scale(1);
+    }
+    
+    .messenger-wrapper.active .messenger-option:nth-child(4) {
+        transform: translate(5px, -80px) scale(1);
+    }
+    
+    .messenger-wrapper.active .messenger-option:nth-child(5) {
+        transform: translate(45px, -50px) scale(1);
+    }
+    
+    .messenger-wrapper.active .messenger-option:nth-child(6) {
+        transform: translate(60px, 0) scale(1);
+    }
+}
+
+/* Анимация пульсации для привлечения внимания */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
 /* Мобильная версия навигации */
 @media (max-width: 768px) {
     .mobile-menu-toggle {
