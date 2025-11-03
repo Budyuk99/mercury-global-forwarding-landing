@@ -405,6 +405,152 @@ nav a {
 .owl-nav button.owl-prev { left: 15px; }
 .owl-nav button.owl-next { right: 15px; }
 
+/* Мобильное меню - исправления */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    justify-content: space-between;
+    z-index: 1002;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #212121;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+/* Активное состояние гамбургера */
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    height: 100%;
+}
+
+/* Мобильная версия навигации */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 30px 20px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+        z-index: 999;
+        gap: 0;
+        height: auto;
+        min-height: calc(100vh - 70px);
+        align-items: flex-start;
+    }
+
+    .main-nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .main-nav a {
+        font-size: 18px;
+        padding: 15px 0;
+        width: 100%;
+        border-bottom: 1px solid rgba(33, 33, 33, 0.1);
+        text-align: left;
+    }
+
+    .main-nav a:last-child {
+        border-bottom: none;
+    }
+
+    .main-nav a:hover {
+        background-color: #f8f9fa;
+        color: #0069B4;
+    }
+
+    .main-nav .divider {
+        width: 100%;
+        height: 1px;
+        background-color: rgba(33, 33, 33, 0.1);
+        margin: 10px 0;
+    }
+
+    .lang-dropdown {
+        width: 100%;
+        justify-content: flex-start;
+        margin-top: 10px;
+        border: 1px solid rgba(33, 33, 33, 0.2);
+    }
+
+    .lang-menu {
+        left: 0;
+        right: auto;
+        min-width: 200px;
+    }
+
+    .lang-menu a {
+        padding: 12px 16px;
+        font-size: 16px;
+    }
+}
+
+/* Предотвращаем скролл тела когда меню открыто */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Анимация для плавного появления */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main-nav a,
+.main-nav .divider,
+.main-nav .lang-dropdown {
+    animation: slideDown 0.3s ease forwards;
+}
+
+.main-nav a:nth-child(1) { animation-delay: 0.1s; }
+.main-nav a:nth-child(2) { animation-delay: 0.15s; }
+.main-nav .divider { animation-delay: 0.2s; }
+.main-nav .lang-dropdown { animation-delay: 0.25s; }
 
 /* Адаптивность */
 @media (max-width: 1200px) {
