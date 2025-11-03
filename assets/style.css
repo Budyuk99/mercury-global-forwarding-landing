@@ -353,7 +353,6 @@ nav a {
 
 .slider {
   position: relative;
-  overflow: hidden;
   padding: 0;
 }
 
@@ -375,6 +374,15 @@ nav a {
   border-radius: 16px;
   object-fit: cover;
 }
+
+/* Адаптивная высота слайдера */
+.gallery-slider,
+.gallery-slider .slide,
+.gallery-slider .slide img {
+  height: clamp(400px, 39.5vw, 756px);
+  object-fit: cover;
+}
+
 
 /* Навигация */
 .owl-nav button.owl-prev,
@@ -448,6 +456,32 @@ nav a {
     gap: 2rem;
     height: 100%;
 }
+
+/* Убираем абсолютное позиционирование */
+.owl-dots {
+    position: relative; /* стандартное поведение */
+    margin-top: 15px;   /* отступ между слайдером и точками */
+    text-align: center;
+}
+
+.owl-dots .owl-dot {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.owl-dots .owl-dot span {
+    width: 12px;
+    height: 12px;
+    background: #ccc;
+    display: block;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.owl-dots .owl-dot.active span {
+    background: #0069B4 !important;
+}
+
 
 /* Мобильная версия навигации */
 @media (max-width: 768px) {
