@@ -20,8 +20,9 @@ mobileMenuToggle.addEventListener("click", (e) => {
     e.stopPropagation();
     mainNav.classList.toggle("active");
     mobileMenuToggle.classList.toggle("active");
-    
-    // Анимация гамбургер-иконки
+    document.body.classList.toggle("menu-open", mainNav.classList.contains("active")); // <--- добавлено
+
+    // Анимация гамбургера
     const spans = mobileMenuToggle.querySelectorAll('span');
     if (mainNav.classList.contains('active')) {
         spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
@@ -39,6 +40,7 @@ document.querySelectorAll('.main-nav a').forEach(link => {
     link.addEventListener('click', () => {
         mainNav.classList.remove('active');
         mobileMenuToggle.classList.remove('active');
+        document.body.classList.remove('menu-open'); // <--- добавлено
         const spans = mobileMenuToggle.querySelectorAll('span');
         spans[0].style.transform = 'none';
         spans[1].style.opacity = '1';
@@ -51,6 +53,7 @@ document.addEventListener('click', (e) => {
     if (!mainNav.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
         mainNav.classList.remove('active');
         mobileMenuToggle.classList.remove('active');
+        document.body.classList.remove('menu-open'); // <--- добавлено
         const spans = mobileMenuToggle.querySelectorAll('span');
         spans[0].style.transform = 'none';
         spans[1].style.opacity = '1';
@@ -58,11 +61,13 @@ document.addEventListener('click', (e) => {
     }
 });
 
+
 // Закрытие мобильного меню при ресайзе окна
 window.addEventListener('resize', () => {
     if (window.innerWidth > 768) {
         mainNav.classList.remove('active');
         mobileMenuToggle.classList.remove('active');
+        document.body.classList.remove('menu-open'); // <--- добавлено
         const spans = mobileMenuToggle.querySelectorAll('span');
         spans[0].style.transform = 'none';
         spans[1].style.opacity = '1';
