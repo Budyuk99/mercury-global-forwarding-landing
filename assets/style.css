@@ -231,6 +231,7 @@ nav a {
     gap: 12px;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-start;
 }
 
 .content-block_item-img {
@@ -263,6 +264,7 @@ nav a {
     flex-basis: calc(50% - 6px);
     justify-content: space-between;
     width: 100%;
+    min-height: 300px;
 }
 
 .content-block_item-first {
@@ -277,7 +279,7 @@ nav a {
     font-style: normal;
     font-weight: 400;
     color: #212121;
-    line-height: 1.5;
+    line-height: 120%;
 }
 
 .content-block_item-third a {
@@ -502,9 +504,9 @@ nav a {
     justify-content: center;
 }
 
-.full-text_img img {
+/* .full-text_img img {
     width: 100%;
-}
+} */
 
 /* Кнопка мессенджера */
 .messenger-wrapper {
@@ -526,7 +528,6 @@ nav a {
     transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     position: relative;
     z-index: 2;
-    box-shadow: 0 4px 12px black;
 }
 
 .messenger-btn img {
@@ -622,6 +623,10 @@ nav a {
 
 .messenger-wrapper.active .messenger-btn {
     border: 4px solid #fff;
+}
+
+.banner-content_first {
+    line-height: 100%;
 }
 
 /* Адаптивность для мобильных */
