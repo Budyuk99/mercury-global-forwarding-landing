@@ -647,6 +647,10 @@ nav a {
     margin-bottom: 20px;
 }
 
+.footer_item_without-ing {
+    margin-left: 32px;
+}
+
 .footer_block {
     padding-left: 20px;
 }
