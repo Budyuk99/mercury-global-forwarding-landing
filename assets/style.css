@@ -476,7 +476,7 @@ nav a {
 /* Кнопка мессенджера */
 .messenger-wrapper {
     position: fixed;
-    bottom: 100px;
+    bottom: 250px;
     right: 100px;
     z-index: 10000;
 }
@@ -493,6 +493,7 @@ nav a {
     transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     position: relative;
     z-index: 2;
+    border: 7px solid #25323a;
 }
 
 .messenger-btn img {
@@ -636,6 +637,7 @@ nav a {
     line-height: 120%;
     font-size: 16px;
     font-weight: 500;
+    text-align: left;
 }
 
 .line_coord {
@@ -652,6 +654,18 @@ nav a {
 .line_second {
     min-height: 70px;
 }
+
+.full-text {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  opacity: 0;
+}
+
+.content-block_item-text.expanded .full-text {
+  opacity: 1;
+}
+
 
 /* Адаптивность для мобильных */
 @media (max-width: 768px) {

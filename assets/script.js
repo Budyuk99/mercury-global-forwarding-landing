@@ -103,19 +103,35 @@ $(".gallery-slider").owlCarousel({
 });
 
 document.querySelectorAll('.toggle-text-link').forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault(); // чтобы ссылка не переходила по #
-        const textContainer = link.closest('.content-block_item-text');
-        textContainer.classList.toggle('expanded');
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
 
-        // Меняем текст ссылки
-        if (textContainer.classList.contains('expanded')) {
-            link.textContent = "Свернуть";
-        } else {
-            link.textContent = "Узнать больше";
-        }
-    });
+    const parent = this.closest('.content-block_item-text');
+    const fullText = parent.querySelector('.full-text');
+    const isExpanded = parent.classList.contains('expanded');
+
+    if (!isExpanded) {
+      // 🔽 Плавное открытие
+      parent.classList.add('expanded');
+      fullText.style.maxHeight = fullText.scrollHeight + "px";
+      this.textContent = "Скрыть";
+    } else {
+      // 🔼 Плавное закрытие
+      fullText.style.maxHeight = fullText.scrollHeight + "px"; // зафиксировать текущую высоту
+      requestAnimationFrame(() => {
+        fullText.style.maxHeight = "0";
+      });
+
+      fullText.addEventListener('transitionend', function handler() {
+        parent.classList.remove('expanded');
+        fullText.removeEventListener('transitionend', handler);
+      });
+
+      this.textContent = "Узнать больше";
+    }
+  });
 });
+
 
 // Мессенджер кнопка
 const messengerBtn = document.querySelector('.messenger-btn');
