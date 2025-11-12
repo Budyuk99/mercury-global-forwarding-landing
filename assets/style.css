@@ -493,7 +493,7 @@ nav a {
     transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     position: relative;
     z-index: 2;
-    border: 7px solid #25323a;
+    border: 6px solid #25323a;
 }
 
 .messenger-btn img {
@@ -613,7 +613,7 @@ nav a {
     display: grid;
     grid-auto-rows: min-content; /* строки по размеру содержимого */
     gap: 8px; /* расстояние между строками */
-    width: 312px;
+    width: 330px;
 }
 
 .footer_item.logo img {
