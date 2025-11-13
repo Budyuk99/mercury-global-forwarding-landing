@@ -1,8 +1,6 @@
 // Находим кнопку и контейнер dropdown
 const langBtn = document.querySelector(".lang-dropdown");
 const langDropdown = document.querySelector(".lang-dropdown");
-const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
-const mainNav = document.querySelector(".main-nav");
 
 // Открытие/закрытие меню при клике на кнопку
 langBtn.addEventListener("click", (e) => {
@@ -11,68 +9,20 @@ langBtn.addEventListener("click", (e) => {
 });
 
 // Закрытие меню при клике вне dropdown
-document.addEventListener("click", () => {
+document.addEventListener("click", (e) => {
+    if (!langDropdown.contains(e.target)) {
+        langDropdown.classList.remove("active");
+    }
+});
+
+// Закрытие меню при изменении ориентации экрана
+window.addEventListener('orientationchange', () => {
     langDropdown.classList.remove("active");
 });
 
-// Мобильное меню
-mobileMenuToggle.addEventListener("click", (e) => {
-    e.stopPropagation();
-    mainNav.classList.toggle("active");
-    mobileMenuToggle.classList.toggle("active");
-    document.body.classList.toggle("menu-open", mainNav.classList.contains("active")); // <--- добавлено
-
-    // Анимация гамбургера
-    const spans = mobileMenuToggle.querySelectorAll('span');
-    if (mainNav.classList.contains('active')) {
-        spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
-        spans[1].style.opacity = '0';
-        spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
-    } else {
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
-    }
-});
-
-// Закрытие мобильного меню при клике на ссылку
-document.querySelectorAll('.main-nav a').forEach(link => {
-    link.addEventListener('click', () => {
-        mainNav.classList.remove('active');
-        mobileMenuToggle.classList.remove('active');
-        document.body.classList.remove('menu-open'); // <--- добавлено
-        const spans = mobileMenuToggle.querySelectorAll('span');
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
-    });
-});
-
-// Закрытие мобильного меню при клике вне его области
-document.addEventListener('click', (e) => {
-    if (!mainNav.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-        mainNav.classList.remove('active');
-        mobileMenuToggle.classList.remove('active');
-        document.body.classList.remove('menu-open'); // <--- добавлено
-        const spans = mobileMenuToggle.querySelectorAll('span');
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
-    }
-});
-
-
-// Закрытие мобильного меню при ресайзе окна
-window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
-        mainNav.classList.remove('active');
-        mobileMenuToggle.classList.remove('active');
-        document.body.classList.remove('menu-open'); // <--- добавлено
-        const spans = mobileMenuToggle.querySelectorAll('span');
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
-    }
+// Закрытие меню при скролле
+window.addEventListener('scroll', () => {
+    langDropdown.classList.remove("active");
 });
 
 $(".gallery-slider").owlCarousel({
