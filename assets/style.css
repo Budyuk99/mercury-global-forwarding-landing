@@ -9,33 +9,47 @@ body {
     overflow-x: hidden;
 }
 
-/* Шапка */
 header {
     position: sticky;
     top: 0;
     background: #fff;
-    color: #fff;
     padding: 21px 60px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* <-- логотип слева, меню справа */
     align-items: center;
     z-index: 1000;
     height: 80px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-header .logo img {
-    max-width: 150px;
-    height: auto;
+header .logo {
+    margin-right: auto; /* <-- гарантирует, что лого прижмётся влево */
 }
 
-header nav a {
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-left: 0; /* <-- прижимаем меню вправо */
+    justify-content: right;
+}
+
+.main-nav a {
     text-decoration: none;
-    transition: color 0.3s;
     color: #212121;
-    font-size: 18px;
-    font-style: normal;
+    font-size: 14px;
     font-weight: 500;
+    transition: color 0.3s;
+    padding: 10px;
+}
+
+.main-nav a:hover {
+    color: #00bcd4;
+}
+
+.logo img, .mobile_logo img {
+  max-width: 100%;
+  height: auto;
 }
 
 header nav a:hover {
@@ -173,6 +187,7 @@ nav a {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    z-index: 1000000;
 }
 
 .lang-dropdown.active .lang-btn {
@@ -191,6 +206,7 @@ nav a {
     width: 1px;
     height: 100%;
     background-color: rgba(33, 33, 33, 0.12);
+    margin: 0 10px;
 }
 
 .h2_basic {
@@ -720,6 +736,10 @@ nav a {
     .messenger-wrapper.active .messenger-option:nth-child(6) {
         transform: translate(60px, 0) scale(1);
     }
+
+    .contacts_a {
+        padding-right: 0 !important;
+    }
 }
 
 /* Анимация пульсации для привлечения внимания */
@@ -738,7 +758,6 @@ nav a {
 /* Мобильная версия навигации */
 @media (max-width: 768px) {
     .lang-dropdown {
-        width: 100%;
         justify-content: flex-start;
         margin-top: 0;
         border: 1px solid rgba(33, 33, 33, 0.2);
@@ -753,6 +772,7 @@ nav a {
     .lang-menu a {
         padding: 12px 16px;
         font-size: 16px;
+        z-index: 0;
     }
 }
 
@@ -892,6 +912,7 @@ body.menu-open {
     .footer {
         margin-top: 80px;
         padding: 30px 15px;
+        width: 100%;
     }
     
     .footer_container {
@@ -901,6 +922,30 @@ body.menu-open {
     
     .footer_item {
         font-size: 14px;
+        width: 100%;
+    }
+
+    header {
+        padding: 15px 20px;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .main-nav {
+         /* центрируем при узком экране */
+         flex-wrap: nowrap;
+         gap: 0;
+         width: 100%;
+         justify-content: center;
+    }
+
+    .lang-dropdown {
+        margin-top: 0;
+        padding: 8px;
+    }
+
+    .logo img {
+        max-width: 120px; /* уменьшаем логотип */
     }
 }
 
@@ -933,6 +978,7 @@ body.menu-open {
         margin: 0 15px;
         grid-template-columns: 1fr;
         gap: 20px;
+        width: 100%;
     }
     
     .footer_item.logo {
