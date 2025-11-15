@@ -97,6 +97,23 @@ header nav a:hover {
     max-width: 1200px;
 }
 
+.text-after-banner {
+    display: none;
+    margin: 60px 20px;
+}
+
+.banner-content_second-block {
+    z-index: 1;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    color: #FFF;
+    text-align: center;
+    font-family: Manrope;
+    font-style: normal;
+    font-weight: 700;
+    max-width: 1200px;
+    display: none;
+}
+
 .banner-content_second {
     font-size: 36px;
     font-style: normal;
@@ -246,6 +263,7 @@ nav a {
     flex: 1;
     gap: 20px;
     min-width: 0;
+    width: 100%;
 }
 
 .content-block_item {
@@ -624,11 +642,35 @@ nav a {
     display: none;
 }
 
+.banner-content_second-block__first {
+    color: black;
+    text-shadow: none;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.banner-content_second-block__second {
+    color: black;
+    text-shadow: none;
+}
+
 /* Адаптивность для мобильных */
 @media (max-width: 768px) {
     .footer_container {
         grid-template-columns: 1fr; /* все блоки друг под другом */
         gap: 20px;
+    }
+
+    .banner-content {
+        display: none;
+    }
+
+    .text-after-banner {
+        display: flex;
+    }
+
+    .banner-content_second-block {
+        display: block;
     }
 }
 
@@ -798,6 +840,10 @@ body.menu-open {
     .banner-content {
         font-size: 72px;
     }
+
+    .banner-content_second-block {
+        font-size: 72px;
+    }
     
     .banner-content_second {
         font-size: 28px;
@@ -810,6 +856,10 @@ body.menu-open {
 
 @media (max-width: 992px) {
     .banner-content {
+        font-size: 56px;
+    }
+
+    .banner-content_second-block {
         font-size: 56px;
     }
     
@@ -847,10 +897,16 @@ body.menu-open {
         transform: translate(-50%, -50%);
         width: 90%;
     }
+
+    .banner-content_second-block {
+        font-size: 32px;
+        width: 100%;
+    }
     
     .banner-content_second {
         font-size: 18px;
         margin-top: 15px;
+        font-weight: 500;
     }
 
     .content {
@@ -866,12 +922,14 @@ body.menu-open {
     .h2_basic {
         font-size: 28px;
         margin-bottom: 30px;
+        text-align: left;
     }
     
     .content-block_item {
         flex-direction: column;
         padding: 20px;
         gap: 15px;
+        align-items: baseline;
     }
     
     .content-block_item-img {
@@ -885,16 +943,16 @@ body.menu-open {
     
     .content-block_item-first {
         font-size: 20px;
-        text-align: center;
+        text-align: left;
     }
     
     .content-block_item-second {
         font-size: 16px;
-        text-align: center;
+        text-align: left;
     }
     
     .content-block_item-third {
-        text-align: center;
+        text-align: left;
     }
     
     .content-block_item-third a {
@@ -936,7 +994,7 @@ body.menu-open {
          flex-wrap: nowrap;
          gap: 0;
          width: 100%;
-         justify-content: center;
+         justify-content: right;
     }
 
     .lang-dropdown {
@@ -957,9 +1015,13 @@ body.menu-open {
     .banner-content {
         font-size: 24px;
     }
+
+    .banner-content_second-block {
+        font-size: 24px;
+    }
     
     .banner-content_second {
-        font-size: 16px;
+        font-size: 20px;
     }
     
     .content {
@@ -968,6 +1030,7 @@ body.menu-open {
     
     .h2_basic-slider {
         margin: 40px 15px 25px 15px;
+        text-align: center;
     }
     
     .content-block_item {
