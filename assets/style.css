@@ -654,6 +654,10 @@ nav a {
     text-shadow: none;
 }
 
+.full-text_img img {
+    width: 100%;
+}
+
 /* Адаптивность для мобильных */
 @media (max-width: 768px) {
     .footer_container {
