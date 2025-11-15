@@ -1046,17 +1046,18 @@ body.menu-open {
         grid-template-columns: 1fr;
         gap: 20px;
         width: 100%;
+        margin: 0;
     }
     
     .footer_item.logo {
-        text-align: center;
+        text-align: left;
     }
     
     .footer_item.logo img {
-        margin: 0 auto 12px;
+        margin: 0;
     }
 
-    .logo {
+    header .logo {
         display: none;
     }
     
